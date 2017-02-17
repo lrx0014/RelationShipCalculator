@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button FontFamily="Segoe MDL2 Assets" Content="&#xE700;" VerticalAlignment="Top" Width="50" Height="50" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Click="Pane_Click01"/>
-        
+
         <SplitView x:Name="MySplit" IsPaneOpen="False" DisplayMode="CompactOverlay" OpenPaneLength="195">
             <SplitView.Pane>
                 <StackPanel Background="Gray">
@@ -53,19 +53,22 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="Input_text" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
                             <Run Foreground="Gray" Text="欢迎使用亲戚称呼计算器..."/>
                         </TextBlock>
+
+                        <TextBlock x:Name="Result_text" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
+                            <Run Foreground="LightGreen" Text=""/>
+                        </TextBlock>
                     </Grid>
-                    
-                    <Grid Grid.Row="1" Background="LightGray">
-                        <ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ToggleSwitchStyle1}" Margin="20,0,0,0"/>
+
+                    <Grid Background="LightGray" Grid.Row="1" Margin="0,-10,0,0">
+                        <ToggleSwitch HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ToggleSwitchStyle1}" Margin="20,-4,0,0"/>
                     </Grid>
                 </Grid>
 
                 <Grid x:Name="Button_Area" Grid.Row="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
@@ -77,21 +80,18 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Row="0" Grid.Column="0" Content="父" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
-                    <Button Grid.Row="0" Grid.Column="1" Content="母" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
-                    <Button Grid.Row="0" Grid.Column="2" Content="姐" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#33000000" BorderThickness="0,0,2,0" BorderBrush="#102836"/>
-                    <Button Grid.Row="0" Grid.Column="3" Content="清空" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#3300FF5D" BorderThickness="0,0,0,1" BorderBrush="#102836"/>
-                    <Button Grid.Row="1" Grid.Column="0" Content="兄" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
-                    <Button Grid.Row="1" Grid.Column="1" Content="弟" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
-                    <Button Grid.Row="1" Grid.Column="2" Content="弟" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" BorderThickness="0,0,2,2" BorderBrush="#102836"/>
-                    <Button Grid.Row="1" Grid.Column="3" Content="回退" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#3300FF5D" BorderThickness="0,0,0,1" BorderBrush="#102836"/>
-                    <Button Grid.Row="2" Grid.Column="0" Content="子" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
-                    <Button Grid.Row="2" Grid.Column="1" Content="女" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" BorderThickness="0,0,2,0" BorderBrush="#102836"/>
-                    <Button Grid.Row="2" Grid.Column="2" Content="性别" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#3300FF5D" BorderThickness="0,0,0,1" BorderBrush="#102836"/>
-                    <Button Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Content="计算" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#3300FF5D" BorderThickness="1,0,0,0" BorderBrush="#102836"/>
-                    <Button Grid.Row="3" Grid.Column="0" Content="夫" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
-                    <Button Grid.Row="3" Grid.Column="1" Content="妻" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" BorderThickness="0,0,2,0" BorderBrush="#102836"/>
-                    <Button Grid.Row="3" Grid.Column="2" Content="帮助" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#3300FF5D"/>
+                    <Button Grid.Row="0" Grid.Column="0" Content="父" Click="father" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="母" Click="mother" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="0" Grid.Column="2" Content="姐" Click="o_sis" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#33000000"/>
+                    <Button Grid.Row="2" Grid.Column="2" Content="清空" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#FF4B968C" Click="Clear_click"/>
+                    <Button Grid.Row="1" Grid.Column="0" Content="兄" Click="o_bro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="1" Grid.Column="1" Content="弟" Click="l_bro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="1" Grid.Column="2" Content="妹" Click="l_sis" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="2" Grid.Column="0" Content="子" Click="son" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="2" Grid.Column="1" Content="女" Click="daughter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="2" Grid.Column="3" Content="计算" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" Background="#FFEF0129" Click="Calculate_click"/>
+                    <Button Grid.Row="0" Grid.Column="3" Content="夫" Click="husband" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24"/>
+                    <Button Grid.Row="1" Grid.Column="3" Content="妻" Click="wife" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonStyle1}" FontSize="24" BorderThickness="0,0,2,0" BorderBrush="#102836"/>
                 </Grid>
             </Grid>
         </SplitView>

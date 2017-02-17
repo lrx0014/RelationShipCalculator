@@ -367,6 +367,9 @@
     <AppxPackagedFile Include="C:\Users\lrx00\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\data\_data.txt">
+      <PackagePath>data\_data.txt</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

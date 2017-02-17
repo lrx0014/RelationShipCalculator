@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>92443F67D2C84811AD47203FD344195296DEA1D90AD0FC8577D50B89EA469ED6</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>55A6233577AFCAFC84CF0774B9978EBF479AD58906233FE1A5C4271C76350989</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>08aa660c-cb07-49fd-afda-9621eb4855e3_1.0.0.0_x86__myfmhe3wf4dde</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>08aa660c-cb07-49fd-afda-9621eb4855e3_myfmhe3wf4dde!App</RegisteredUserModeAppID>
     <RegisteredPackageID>08aa660c-cb07-49fd-afda-9621eb4855e3</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-16T14:42:43.547</Modified>
+      <Modified>2017-02-17T14:21:46.917</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\bin\x86\Debug\RelationshipCalculator.exe">
       <PackagePath>entrypoint\RelationshipCalculator.exe</PackagePath>
-      <Modified>2017-02-16T14:42:42.862</Modified>
+      <Modified>2017-02-17T14:21:46.616</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lrx00\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -492,6 +492,10 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T15:15:04.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\data\_data.txt">
+      <PackagePath>data\_data.txt</PackagePath>
+      <Modified>2017-02-17T14:11:51.953</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-02-16T12:03:20.694</Modified>
@@ -541,11 +545,11 @@
     <AppxPackagedFile Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-16T14:42:43.206</Modified>
+      <Modified>2017-02-17T14:18:20.311</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\MyGit\RelationshipCalculator\RelationshipCalculator\bin\x86\Debug\Core\RelationshipCalculator.exe">
       <PackagePath>RelationshipCalculator.exe</PackagePath>
-      <Modified>2017-02-16T14:42:43.544</Modified>
+      <Modified>2017-02-17T14:21:46.911</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
