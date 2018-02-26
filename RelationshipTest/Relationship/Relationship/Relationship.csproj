@@ -45,9 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Function\getJson.cs" />
-    <Compile Include="Function\Searcher.cs" />
-    <Compile Include="Function\Simplifier.cs" />
+    <Compile Include="Function\GetFilter.cs" />
+    <Compile Include="Function\GetData.cs" />
+    <Compile Include="Function\GetResult.cs" />
+    <Compile Include="Function\GetText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -25,13 +25,54 @@ namespace Relationship
             }
             */
 
-            Simplifier sf = new Simplifier();
+            /*
             string str = "";
+            Filter f = new Filter("Data//Filter.json");
+
             str = Console.ReadLine();
-            while (str != "exit")
+            while(str!="exit")
             {
-                sf.getSelectors(str);
+                string output = f.Execute(str);
+                Console.WriteLine(output);
                 str = Console.ReadLine();
+            }
+            */
+            /*
+            StreamReader file = new StreamReader("Data//Filter.json", System.Text.Encoding.UTF8);
+            var _filter = file.ReadToEnd().Split('%');
+            JObject[] _temp = new JObject[50];
+            int j = 0;
+            for(int i=0;i<_filter.Length-1;i++)
+            {
+                Console.WriteLine(j);
+                Console.WriteLine(_filter[i]);
+                _temp[j++] = JObject.Parse(_filter[i]);
+            }
+            */
+
+            JObject obj;
+
+            GetData data = new GetData("Data//data.json");
+
+            obj = data.getJson();
+
+            string my = "";
+
+            my = Console.ReadLine();
+
+            GetText text = new GetText(obj);
+
+            GetFilter filter = new GetFilter("Data//Filter.json");
+
+            GetResult result = new GetResult(obj);
+
+            while(my!="exit")
+            {
+                my = text.easyGetText(my);
+                string simplify = filter.Execute(my);
+                string res = result.Relationship(simplify);
+                Console.WriteLine(res);
+                my = Console.ReadLine();
             }
         }
     }
