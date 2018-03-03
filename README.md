@@ -10,4 +10,4 @@ The traditional Chinese kinship is complicated and difficult to remember. The pr
 
 数据取自开源项目 **(感谢mumuy:https://github.com/mumuy/relationship)**
 
-原版是用JS实现，我使用C#进行了重写，并且修改了逻辑，使用MVVM开发模式重构，使数据和逻辑解耦，从而实现数据的动态更新。 
+原作者的版本是用JS实现，功能完整数据齐全，这个库衍生了许多web应用、微信小程序和安卓APP；但是我发现Windows应用商店鲜有同类应用，所以就开发了一个Win10版本，使用C#对原版程序进行了重写，并且修改了逻辑，使用MVVM开发模式重构，使数据和逻辑解耦，从而实现数据的动态更新。 
