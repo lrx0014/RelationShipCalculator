@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace Relationship.Function
        
         }
 
-        private void getId(ref string selector, ref Dictionary<string, bool> hash, ref string result)
+        private void getId(ref string selector, ref Dictionary<string, bool> hash, ref ArrayList result)
         {
             string s = "";
             if (!hash.ContainsKey(selector))
@@ -68,20 +69,30 @@ namespace Relationship.Function
                     {
                         return; 
                     }
-                    if(selector.Length!=0)
+
+                    selector = Regex.Replace(selector, @",[01]", "");
+
+                    if (selector.Length!=0)
                     {
-                        selector = Regex.Replace(selector, @",[01]", "").Substring(1);
+                        selector = selector.Substring(1);
                     }
                     
-                    result += selector;
+                    result.Add(selector);
                 }
             }
         }
 
-        public string Execute(string selector,int sex=-1)
+        public ArrayList Execute(string selector,int sex=-1)
         {
-            if (selector == "") return "";
-            string result = "";
+            /* Console.WriteLine("in:"+selector); */
+
+            ArrayList result = new ArrayList();
+
+            if (selector == "")
+            {
+                result.Add("");
+                return result;
+            }
       
             Dictionary<string, bool> hash = new Dictionary<string, bool>();
 
@@ -102,10 +113,22 @@ namespace Relationship.Function
             }
             if (Regex.IsMatch(selector, @",[w0],w|,[h1],h"))
             {
-                return "false"; // 同志关系
+                result.Add("false");
+                return result; // 同志关系
             }
 
             getId(ref selector, ref hash, ref result);
+
+            /*
+            Console.Write("out:");
+            foreach(string s in result)
+            {
+                if (s == "") Console.Write("_ ");
+                else Console.Write(s+" ");
+            }
+            Console.Write("\n");
+            */
+
             return result;
         }
     }

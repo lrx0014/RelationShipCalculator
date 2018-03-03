@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using Relationship.Function;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -69,9 +70,13 @@ namespace Relationship
             while(my!="exit")
             {
                 my = text.easyGetText(my);
-                string simplify = filter.Execute(my);
-                string res = result.Relationship(simplify);
-                Console.WriteLine(res);
+                ArrayList simplify = filter.Execute(my);
+                foreach(string s in simplify)
+                {
+                    string res = result.Relationship(s);
+                    Console.WriteLine(res);
+                    
+                }
                 my = Console.ReadLine();
             }
         }
