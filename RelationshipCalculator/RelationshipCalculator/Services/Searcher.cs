@@ -1,35 +1,35 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Relationship.Function
+namespace RelationshipCalculator.Services
 {
-    class GetResult
+    class Searcher
     {
         private JObject obj;
 
-        public GetResult(JObject obj)
+        public Searcher(JObject obj)
         {
             this.obj = obj;
         }
-        public string Relationship(string my)
-        {
-            string ret = "null";
 
-            try
+        public string Who(string my)
+        {
+            string ret = "";
+
+            if(obj.ContainsKey(my))
             {
                 ret = obj[my].ToString();
-            }catch(Exception e)
+            }
+            else
             {
-                ///
+                ret = "你们不是很熟哦~";
             }
 
             return ret;
         }
-        
-}
+    }
 }

@@ -51,32 +51,16 @@ namespace Relationship
             }
             */
 
-            JObject obj;
-
-            GetData data = new GetData("Data//data.json");
-
-            obj = data.getJson();
-
             string my = "";
+
+            RelationshipModel rel = new RelationshipModel();
 
             my = Console.ReadLine();
 
-            GetText text = new GetText(obj);
-
-            GetFilter filter = new GetFilter("Data//Filter.json");
-
-            GetResult result = new GetResult(obj);
-
             while(my!="exit")
             {
-                my = text.easyGetText(my);
-                ArrayList simplify = filter.Execute(my);
-                foreach(string s in simplify)
-                {
-                    string res = result.Relationship(s);
-                    Console.WriteLine(res);
-                    
-                }
+                my = rel.easyGetText(my);
+                rel.Who(my);
                 my = Console.ReadLine();
             }
         }

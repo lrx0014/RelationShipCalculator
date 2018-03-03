@@ -49,6 +49,7 @@
     <Compile Include="Function\GetData.cs" />
     <Compile Include="Function\GetResult.cs" />
     <Compile Include="Function\GetText.cs" />
+    <Compile Include="Function\RelationshipModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
