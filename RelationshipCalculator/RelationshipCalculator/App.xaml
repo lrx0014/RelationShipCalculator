@@ -3,7 +3,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RelationshipCalculator"
-    RequestedTheme="Light"
-    StartupUri ="View/MainPage.xaml">
+    RequestedTheme="Light">
 
 </Application>

@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="RelationshipCalculator.View.CalculatorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RelationshipCalculator.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Name="Input_text" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
+                            <Run Foreground="Gray" Text="欢迎使用亲戚称呼计算器..."/>
+                    </TextBlock>
+
+                    <TextBlock x:Name="Result_text" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
+                            <Run Foreground="LightGreen" Text=""/>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Background="LightGray" Grid.Row="1" Margin="0,-10,0,0">
+                    <TextBlock 
+                        VerticalAlignment="Bottom" 
+                        Text="计算结果仅供参考" 
+                        FontSize="28px"
+                        HorizontalAlignment="Center"
+                        FontWeight="Bold"/>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="Button_Area" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Content="父" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="母" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="姐" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#33000000"/>
+                <Button Grid.Row="2" Grid.Column="2" Content="清空" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#FF4B968C"/>
+                <Button Grid.Row="1" Grid.Column="0" Content="兄"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="弟"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="妹"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="2" Grid.Column="0" Content="子"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="女"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="2" Grid.Column="3" Content="计算" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#FFEF0129"/>
+                <Button Grid.Row="0" Grid.Column="3" Content="夫"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
+                <Button Grid.Row="1" Grid.Column="3" Content="妻"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" BorderThickness="0,0,2,0" BorderBrush="#102836"/>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Page>
