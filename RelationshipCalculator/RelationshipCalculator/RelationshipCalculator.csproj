@@ -119,8 +119,8 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Data\Data.json" />
-    <None Include="Data\Filter.json" />
+    <None Include="Assets\Data\Data.json" />
+    <None Include="Assets\Data\Filter.json" />
     <None Include="RelationshipCalculator_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

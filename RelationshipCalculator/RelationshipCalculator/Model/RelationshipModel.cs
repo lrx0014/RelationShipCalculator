@@ -14,7 +14,7 @@ namespace RelationshipCalculator.Model
         private string result;
         private string inputText;
 
-        public string Result { get; set; }
+        public string Result { get { return result; } set { result = value; } }
         public string InputText { get; set; }
 
         public RelationshipModel()

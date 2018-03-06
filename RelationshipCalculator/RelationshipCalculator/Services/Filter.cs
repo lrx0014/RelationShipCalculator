@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System;
+using Windows.Storage;
 
 namespace RelationshipCalculator.Services
 {
@@ -14,12 +16,15 @@ namespace RelationshipCalculator.Services
     {
         private JObject[] _Filter;
         private int _FilterSize;
+        private string filter;
 
         public Filter(string path)
         {
-            FileStream fs = new FileStream(@"Data//Filter.json", FileMode.Open);
-            StreamReader file = new StreamReader(fs, System.Text.Encoding.UTF8);
-            var _filter = file.ReadToEnd().Split('%');
+            //FileStream fs = new FileStream(@"Data//Filter.json", FileMode.Open);
+            //StreamReader file = new StreamReader(fs, System.Text.Encoding.UTF8);
+            Task<string> filter_task = GetFileAsync();
+            filter = filter_task.ToString();
+            var _filter = filter.Split('%');
             JObject[] _temp = new JObject[50];
             int j = 0;
             for (int i = 0; i < _filter.Length - 1; i++)
@@ -29,6 +34,16 @@ namespace RelationshipCalculator.Services
             this._Filter = _temp;
             this._FilterSize = j - 1;
 
+        }
+
+        public async System.Threading.Tasks.Task<string> GetFileAsync()
+        {
+            //var file = new System.Uri("ms-appx:///Assets/Data/Data.json");
+            //StorageFile f = await StorageFile.GetFileFromApplicationUriAsync(file);
+            var uri = new System.Uri("ms-appx:///Assets/Data/Filter.json");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            string text = await Windows.Storage.FileIO.ReadTextAsync(file);
+            return text;
         }
 
         private void getId(ref string selector, ref Dictionary<string, bool> hash, ref ArrayList result)

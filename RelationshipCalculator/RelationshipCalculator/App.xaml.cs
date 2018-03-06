@@ -30,6 +30,7 @@ namespace RelationshipCalculator
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            
         }
 
         /// <summary>

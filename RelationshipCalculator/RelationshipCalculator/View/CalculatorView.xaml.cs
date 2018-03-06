@@ -22,9 +22,13 @@ namespace RelationshipCalculator.View
     /// </summary>
     public sealed partial class CalculatorView : Page
     {
+
+        public ViewModel.RelationshipViewModel VM => new ViewModel.RelationshipViewModel();
+
         public CalculatorView()
         {
             this.InitializeComponent();
+            this.DataContext = VM;
         }
     }
 }
