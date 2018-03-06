@@ -2,6 +2,13 @@
 
 (工程使用MVVMLight重新组织)
 
+
+![](https://github.com/lrx0014/RelationShipCalculator/blob/master/Screenshots/main1.PNG)
+
+
+![](https://github.com/lrx0014/RelationShipCalculator/blob/master/Screenshots/main2.PNG)
+
+
 The traditional Chinese kinship is complicated and difficult to remember. The project is a practical and interesting application. The corresponding relative call can be gained after inputting a relation chain in the calculator (e.g input: the son of dad’s elder brother’s wife; input: cousin); it is a Win10 UWP application; use C# + XAML in VS2017 for development; the data is from a open source project 
 
 **(Thanks:mumuy:https://github.com/mumuy/relationship)**
