@@ -11,7 +11,6 @@ namespace RelationshipCalculator.Services
     {
         private string data;
         private string filter;
-        private string json;
         private JObject obj;
 
         public DataSource()

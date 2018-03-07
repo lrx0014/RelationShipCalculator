@@ -28,15 +28,22 @@ namespace RelationshipCalculator.Model
 
         public void GetChain()
         {
+            bool found = false;
+            string temp = Regex.Replace(Keyword, "^[一|二|三|四|五|六|七|八|九|十]+","x");
             foreach(var i in obj)
             {
-                if(i.Value.Contains(Keyword))
+                if(i.Value.ToString().Contains(temp))
                 {
                     Result = Transfer(i.Key);
-                    return;
+                    found = true;
+                    break;
                 }
             }
-            Result = "尚未收录此关系...";
+            if(found==false)
+            {
+                Result = "尚未收录[" + temp + "] ...";
+            }
+            
             return;
         }
 

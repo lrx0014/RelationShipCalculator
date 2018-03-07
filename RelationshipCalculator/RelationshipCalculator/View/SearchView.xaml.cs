@@ -22,9 +22,13 @@ namespace RelationshipCalculator.View
     /// </summary>
     public sealed partial class SearchView : Page
     {
+        public ViewModel.SearchViewModel VM;
+
         public SearchView()
         {
             this.InitializeComponent();
+            VM = new ViewModel.SearchViewModel();
+            this.DataContext = VM;
         }
     }
 }

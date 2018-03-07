@@ -10,27 +10,26 @@ using System.Windows.Input;
 
 namespace RelationshipCalculator.ViewModel
 {
-    class SearchViewModel : ViewModelBase
+    public class SearchViewModel : ViewModelBase
     {
-        private SearchModel searchModel;
+        private SearchModel searchModel = new SearchModel();
         private string resultDisplay;
+
+        public SearchViewModel()
+        {
+            this.Keyword       = string.Empty;
+        }
 
         public string Keyword { get { return searchModel.Keyword; } set { searchModel.Keyword = value; } }
 
-        public string ResultDisplay {
+        public string ResultDisplay
+        {
             get { return searchModel.Result; }
             set
             {
                 this.resultDisplay = value;
                 RaisePropertyChanged("ResultDisplay");
             }
-        }
-
-        public SearchViewModel()
-        {
-            this.ResultDisplay = string.Empty;
-            this.Keyword       = string.Empty;
-            this.searchModel   = new SearchModel();
         }
 
         private void RunSearch()
