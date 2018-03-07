@@ -11,9 +11,9 @@ using Windows.UI.Popups;
 
 namespace RelationshipCalculator.ViewModel
 {
-    public class RelationshipViewModel : ViewModelBase
+    public class CalculatorViewModel : ViewModelBase
     {
-        private RelationshipModel calculator;
+        private CalculatorModel calculator;
 
         private string welcome = "欢迎使用亲戚关系计算器...";
         private string error   = "发生错误，请重试！";
@@ -22,9 +22,9 @@ namespace RelationshipCalculator.ViewModel
         private string display;
        
 
-        public RelationshipViewModel()
+        public CalculatorViewModel()
         {
-            this.calculator = new RelationshipModel();
+            this.calculator = new CalculatorModel();
             this.inputText = string.Empty;
             this.resultText = string.Empty;
             this.display = welcome;

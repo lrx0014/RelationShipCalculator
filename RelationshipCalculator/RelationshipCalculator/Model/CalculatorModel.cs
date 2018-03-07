@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RelationshipCalculator.Model
 {
-    class RelationshipModel
+    class CalculatorModel
     {
         private string result;
         private string inputText;
@@ -19,7 +19,7 @@ namespace RelationshipCalculator.Model
         public string Result { get { return result; } set { result = value;  } }
         public string InputText { get { return inputText; } set { inputText = value; } }
 
-        public RelationshipModel()
+        public CalculatorModel()
         {
             result    = "";
             inputText = "";

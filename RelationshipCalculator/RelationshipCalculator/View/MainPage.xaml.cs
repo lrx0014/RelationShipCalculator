@@ -1,12 +1,15 @@
-﻿using RelationshipCalculator.View;
+﻿using RelationshipCalculator.Model;
+using RelationshipCalculator.View;
 using RelationshipCalculator.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -57,10 +60,18 @@ namespace RelationshipCalculator
 
             });
 
+        private bool isLoaded = false;
 
         public MainPage()
         {
             this.InitializeComponent();
+
+            if (isLoaded == false)
+            {
+                var task = GetJsonFileAsync().ConfigureAwait(false);
+                isLoaded = true;
+            }
+
             // 绑定导航菜单
             NavMenuPrimaryListView.ItemsSource = navMenuPrimaryItem;
 
@@ -74,6 +85,7 @@ namespace RelationshipCalculator
 
             // 默认页
             RootFrame.SourcePageType = typeof(CalculatorView);
+
         }
 
         private void NavMenuListView_ItemClick(object sender, ItemClickEventArgs e)
@@ -93,6 +105,20 @@ namespace RelationshipCalculator
             }
 
             RootSplitView.IsPaneOpen = false;
+        }
+
+
+
+        private async Task GetJsonFileAsync()
+        {
+            var uri = new System.Uri("ms-appx:///Assets/Data/Data.json");
+            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+
+            /* 会引发阻塞 */
+            string text = await Windows.Storage.FileIO.ReadTextAsync(file);
+            var arr = text.Split('Y');
+            DataStore.Data = arr[0];
+            DataStore.Filter = arr[1];
         }
     }
 }

@@ -24,7 +24,7 @@ namespace RelationshipCalculator.View
     public sealed partial class CalculatorView : Page
     {
 
-        public ViewModel.RelationshipViewModel VM => new ViewModel.RelationshipViewModel();
+        public ViewModel.CalculatorViewModel VM => new ViewModel.CalculatorViewModel();
 
         public CalculatorView()
         {
