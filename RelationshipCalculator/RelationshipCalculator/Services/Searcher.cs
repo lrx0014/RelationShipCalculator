@@ -23,7 +23,8 @@ namespace RelationshipCalculator.Services
 
             if(obj.ContainsKey(my))
             {
-                ret = obj[my].ToString();
+                string one = obj[my].ToString().Split(',')[0];
+                ret = one;
             }
             else
             {
@@ -32,7 +33,8 @@ namespace RelationshipCalculator.Services
 
                 if (obj.ContainsKey(my))
                 {
-                    ret = obj[my].ToString();
+                    string one = obj[my].ToString().Split(',')[0];
+                    ret = one;
                 }
                 else
                 {
