@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace RelationshipCalculator.Services
@@ -26,7 +27,17 @@ namespace RelationshipCalculator.Services
             }
             else
             {
-                ret = "你们不是很熟哦~";
+                string key = "l|o";
+                my = Regex.Replace(my,key,"x");
+
+                if (obj.ContainsKey(my))
+                {
+                    ret = obj[my].ToString();
+                }
+                else
+                {
+                    ret = "你们好像不是很熟哦~~ ";
+                }
             }
 
             return ret;

@@ -14,32 +14,43 @@ namespace RelationshipCalculator.Model
         private string result;
         private string inputText;
 
-        public string Result { get { return result; } set { result = value; } }
-        public string InputText { get; set; }
+        private DataSource src;
+
+        public string Result { get { return result; } set { result = value;  } }
+        public string InputText { get { return inputText; } set { inputText = value; } }
 
         public RelationshipModel()
         {
             result    = "";
             inputText = "";
+
+            this.src = new DataSource();
         }
 
         public void getResult()
         {
-            DataSource src = new DataSource("Data//data.json");
+            Result = string.Empty;
 
             Searcher searcher = new Searcher(src.getJson());
 
-            Filter simplifier = new Filter("Data//Filter.json");
+            Filter simplifier = new Filter(src.getFilterText());
 
-            ArrayList sim = simplifier.Execute(inputText);
+            ArrayList sim = simplifier.Execute(InputText);
 
             if(sim.Count!=0)
             {
                 foreach(string s in sim)
                 {
                     string res = searcher.Who(s);
-                    result += res;
-                    result += "\n";
+                    if(res!= "你们好像不是很熟哦~~ ")
+                    {
+                        Result += res;
+                        Result += "\n";
+                    }
+                }
+                if(Result=="")
+                {
+                    Result = "你们好像不是很熟哦~~ ";
                 }
             }
         }

@@ -35,8 +35,12 @@
                                Text="{Binding Path=Display,Mode=TwoWay}"/>
 
 
-                    <TextBlock x:Name="Result_text" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
-                            <Run Foreground="LightGreen" Text=""/>
+                    <TextBlock x:Name="Result_text" 
+                               Grid.Row="1" HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="20">
+                            <Run Foreground="LightGreen" 
+                                 Text="{Binding Path=ResultText,Mode=TwoWay}"/>
                     </TextBlock>
                 </Grid>
 

@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\DataGetter.cs" />
     <Compile Include="ViewModel\NavMenuItem.cs" />
     <Compile Include="View\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
@@ -119,8 +120,14 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Assets\Data\Data.json" />
-    <None Include="Assets\Data\Filter.json" />
+    <None Include="Assets\Data.json" />
+    <None Include="Assets\Data\Data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Data\Filter.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\Filter.json" />
     <None Include="RelationshipCalculator_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

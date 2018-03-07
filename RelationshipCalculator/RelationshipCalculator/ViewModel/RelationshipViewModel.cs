@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace RelationshipCalculator.ViewModel
 {
@@ -63,6 +64,7 @@ namespace RelationshipCalculator.ViewModel
             set
             {
                 calculator.Result = value;
+                RaisePropertyChanged("ResultText");
             }
         }
 
@@ -73,11 +75,21 @@ namespace RelationshipCalculator.ViewModel
                 if (InputText != welcome)
                 {
                     calculator.getResult();
+                    ResultText = calculator.Result;
                 }
+
             }
             catch (Exception e)
             {
-                Display = error + e.Message;
+                //Display = error + e.ToString();
+                var dialog = new MessageDialog(e.ToString(), e.Message);
+
+                dialog.Commands.Add(new UICommand("确定", cmd => { }, commandId: 0));
+                dialog.Commands.Add(new UICommand("取消", cmd => { }, commandId: 1));
+
+                //设置默认按钮，不设置的话默认的确认按钮是第一个按钮
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 1;
             }
         }
 
@@ -98,8 +110,9 @@ namespace RelationshipCalculator.ViewModel
             switch(button)
             {
                 case "清空":
-                    Display  = welcome;
+                    Display    = welcome;
                     ResultText = string.Empty;
+                    InputText  = string.Empty;
                     break;
 
                 case "父":

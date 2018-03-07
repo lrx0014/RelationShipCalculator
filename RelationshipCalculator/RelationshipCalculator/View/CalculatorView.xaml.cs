@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RelationshipCalculator.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,6 +30,10 @@ namespace RelationshipCalculator.View
         {
             this.InitializeComponent();
             this.DataContext = VM;
+
+            //DataGetter dg = new DataGetter();
+            
+            //Result_text.Text = dg.getDataJson();
         }
     }
 }
