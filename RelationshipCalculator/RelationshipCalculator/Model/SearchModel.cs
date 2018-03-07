@@ -13,6 +13,12 @@ namespace RelationshipCalculator.Model
     {
         private DataSource src;
         private JObject obj;
+        private string keyword;
+        private string result;
+
+        public string Keyword { get { return this.keyword; } set { this.keyword = value; } }
+
+        public string Result { get { return this.result; } set { this.result = value; } }
 
         public SearchModel()
         {
@@ -20,16 +26,18 @@ namespace RelationshipCalculator.Model
             this.obj = src.getJson();
         }
 
-        public string GetChain(string name)
+        public void GetChain()
         {
             foreach(var i in obj)
             {
-                if(i.Value.Contains(name))
+                if(i.Value.Contains(Keyword))
                 {
-                    return Transfer(i.Key);
+                    Result = Transfer(i.Key);
+                    return;
                 }
             }
-            return "尚未收录此关系...";
+            Result = "尚未收录此关系...";
+            return;
         }
 
         private string Transfer(string str)

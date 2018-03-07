@@ -24,17 +24,31 @@
                    VerticalAlignment="Bottom"/>
         
         <TextBox Grid.Row="1" 
-        HorizontalAlignment="Center"
-        FontSize="40"
-        PlaceholderText="示例: 姑姥姥"
-        Width="400px"/>
+                 HorizontalAlignment="Center"
+                 FontSize="40"
+                 PlaceholderText="示例: 姑姥姥"
+                 Text="{Binding Path=Keyword,Mode=TwoWay}"
+                 Width="auto"/>
 
         <Button Grid.Row="2"
-        Content="查询"
+                Command="{Binding RunSearchCommand}"
+                Content="查询" 
+                HorizontalAlignment="Center"
+                Width="200"
+                Height="50"
+                />
+
         
-        HorizontalAlignment="Center"
-        Width="200"
-        Height="50"
-        />
+        <TextBlock Grid.Row="3"
+                   Width="auto"
+                   Height="auto"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,10,0,0"
+                   FontSize="24px"
+                   FontWeight="Bold"
+                   TextWrapping="Wrap">
+            <Run Foreground="Green" Text="{Binding Path=ResultDisplay,Mode=TwoWay}"/>
+        </TextBlock>
     </Grid>
 </Page>

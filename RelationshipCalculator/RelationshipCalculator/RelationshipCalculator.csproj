@@ -95,8 +95,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\SearchModel.cs" />
     <Compile Include="Services\DataGetter.cs" />
     <Compile Include="ViewModel\NavMenuItem.cs" />
+    <Compile Include="ViewModel\SearchViewModel.cs" />
     <Compile Include="View\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>

@@ -9,11 +9,44 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <TextBlock x:Name="About_Text" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+            FontSize="24px" 
+            FontWeight="Bold"
+            TextWrapping="Wrap"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Margin="0,0,0,10">
+            <Run Foreground="ForestGreen"
+                 Text="UWP亲戚关系计算器 &#13;version 1.0" />
+        </TextBlock>
+
+        <TextBlock Grid.Row="1"
+                   TextWrapping="Wrap"
+                   FontSize="22px"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="24px" 
-                   Text="Test Text Test Text Test Text" />
+                   Margin="10,10,10,10"
+                   Text="数据收集于互联网&#13;   不保证完全齐全、准确&#13;      仅供参考娱乐 &#13; ^v^" />
+
+        <TextBlock Grid.Row="2"
+                   TextWrapping="Wrap"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   FontWeight="Bold"
+                   Margin="0,0,0,40"
+                   FontSize="14px"
+                   TextAlignment="Center">
+            @ RYANN <LineBreak/>
+            <Hyperlink NavigateUri="https://github.com/lrx0014/RelationShipCalculator">
+                https://github.com/lrx0014/RelationShipCalculator
+            </Hyperlink>
+        </TextBlock>
 
     </Grid>
 </Page>
