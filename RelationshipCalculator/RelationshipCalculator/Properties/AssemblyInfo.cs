@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RelationshipCalculator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("中国亲戚称谓计算器")]
+[assembly: AssemblyDescription("中国亲戚称谓计算器(UWP)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("RelationshipCalculator")]

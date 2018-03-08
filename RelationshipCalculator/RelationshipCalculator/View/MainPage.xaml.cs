@@ -68,7 +68,7 @@ namespace RelationshipCalculator
 
             if (isLoaded == false)
             {
-                var task = GetJsonFileAsync().ConfigureAwait(false);
+                var task = GetJsonFileAsync().GetAwaiter();  //.ConfigureAwait(false);
                 isLoaded = true;
             }
 
@@ -113,8 +113,6 @@ namespace RelationshipCalculator
         {
             var uri = new System.Uri("ms-appx:///Assets/Data/Data.json");
             var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-
-            /* 会引发阻塞 */
             string text = await Windows.Storage.FileIO.ReadTextAsync(file);
             var arr = text.Split('Y');
             DataStore.Data = arr[0];

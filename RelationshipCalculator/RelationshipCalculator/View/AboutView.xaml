@@ -32,7 +32,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Margin="10,10,10,10"
-                   Text="数据收集于互联网&#13;   不保证完全齐全、准确&#13;      仅供参考娱乐 &#13; ^v^" />
+                   Text="自动忽略自身性别和年龄&#13;数据收集于互联网&#13;不保证完全齐全、准确&#13;仅供参考娱乐 &#13; ^v^" />
 
         <TextBlock Grid.Row="2"
                    TextWrapping="Wrap"

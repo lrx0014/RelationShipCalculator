@@ -37,16 +37,27 @@ namespace RelationshipCalculator.Model
 
             ArrayList sim = simplifier.Execute(InputText);
 
+            Dictionary<string, bool> record = new Dictionary<string, bool>();
+
             if(sim.Count!=0)
             {
                 foreach(string s in sim)
                 {
-                    string res = searcher.Who(s);
-                    if(res!= "你们好像不是很熟哦~~ ")
+                    if(record.ContainsKey(s))
                     {
-                        Result += res;
-                        Result += "\n";
+                        continue;
                     }
+                    else
+                    {
+                        record.Add(s, true);
+                        string res = searcher.Who(s);
+                        if(res!= "你们好像不是很熟哦~~ ")
+                        {
+                            Result += res;
+                            Result += "\n";
+                        }
+                    }
+                    
                 }
                 if(Result=="")
                 {
