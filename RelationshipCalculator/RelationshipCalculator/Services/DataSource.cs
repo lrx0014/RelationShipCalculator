@@ -15,11 +15,6 @@ namespace RelationshipCalculator.Services
 
         public DataSource()
         {
-            //var task =  GetJsonFileAsync().ConfigureAwait(false);
-            //var arr = json.Split('Y');
-            //data   = arr[0];
-            //filter = arr[1];
-
             data   = DataStore.Data;
             filter = DataStore.Filter;
             JObject obj = JObject.Parse(data);
@@ -27,30 +22,17 @@ namespace RelationshipCalculator.Services
 
         }
 
-        /*
-        private async Task<string> GetJsonFileAsync()
-        {
-            var uri = new System.Uri("ms-appx:///Assets/Data/Data.json");
-            var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
-
-            
-            string text = await Windows.Storage.FileIO.ReadTextAsync(file);
-            this.json = text;
-            return text;
-        }
-       */
-
-        public JObject getJson()
+        public JObject GetJson()
         {
             return this.obj;
         }
 
-        public string getDataText()
+        public string GetDataText()
         {
             return this.data;
         }
 
-        public string getFilterText()
+        public string GetFilterText()
         {
             return this.filter;
         }

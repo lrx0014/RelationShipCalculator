@@ -60,16 +60,21 @@ namespace RelationshipCalculator
 
             });
 
-        private bool isLoaded = false;
-
         public MainPage()
         {
             this.InitializeComponent();
 
-            if (isLoaded == false)
+            try
             {
-                var task = GetJsonFileAsync().GetAwaiter();  //.ConfigureAwait(false);
-                isLoaded = true;
+                var task = RunGetJsonAsync();
+                while (task.IsCompleted == false)
+                {
+                    task = RunGetJsonAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
             }
 
             // 绑定导航菜单
@@ -107,9 +112,15 @@ namespace RelationshipCalculator
             RootSplitView.IsPaneOpen = false;
         }
 
+        
+        private static async Task<int> RunGetJsonAsync()
+        {
+            var result = await GetJsonFileAsync();
+            return result;
+        }
+        
 
-
-        private async Task GetJsonFileAsync()
+        private static async Task<int> GetJsonFileAsync()
         {
             var uri = new System.Uri("ms-appx:///Assets/Data/Data.json");
             var file = await StorageFile.GetFileFromApplicationUriAsync(uri);
@@ -117,6 +128,8 @@ namespace RelationshipCalculator
             var arr = text.Split('Y');
             DataStore.Data = arr[0];
             DataStore.Filter = arr[1];
+            return 0;
         }
+        
     }
 }

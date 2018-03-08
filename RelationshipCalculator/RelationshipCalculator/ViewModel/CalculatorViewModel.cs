@@ -103,7 +103,7 @@ namespace RelationshipCalculator.ViewModel
             {
                 if (InputText != welcome)
                 {
-                    calculator.getResult();
+                    calculator.GetResult();
                     ResultText = calculator.Result;
                 }
 

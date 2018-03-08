@@ -33,7 +33,7 @@ namespace RelationshipCalculator.Services
 
         }
 
-        private void getId(ref string selector, ref Dictionary<string, bool> hash, ref ArrayList result)
+        private void GetId(ref string selector, ref Dictionary<string, bool> hash, ref ArrayList result)
         {
             string s = "";
             if (!hash.ContainsKey(selector))
@@ -59,7 +59,7 @@ namespace RelationshipCalculator.Services
 
                             for (int j = 0; j < arr.Length; j++)
                             {
-                                getId(ref arr[j], ref hash, ref result);
+                                GetId(ref arr[j], ref hash, ref result);
                             }
                             status = "false";
                             break;
@@ -120,7 +120,7 @@ namespace RelationshipCalculator.Services
                 return result; // 同志关系
             }
 
-            getId(ref selector, ref hash, ref result);
+            GetId(ref selector, ref hash, ref result);
 
             /*
             Console.Write("out:");

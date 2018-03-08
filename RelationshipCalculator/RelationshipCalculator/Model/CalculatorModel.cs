@@ -23,17 +23,23 @@ namespace RelationshipCalculator.Model
         {
             result    = "";
             inputText = "";
-
-            this.src = new DataSource();
+            try
+            {
+                this.src = new DataSource();
+            }catch(Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            
         }
 
-        public void getResult()
+        public void GetResult()
         {
             Result = string.Empty;
 
-            Searcher searcher = new Searcher(src.getJson());
+            Searcher searcher = new Searcher(src.GetJson());
 
-            Filter simplifier = new Filter(src.getFilterText());
+            Filter simplifier = new Filter(src.GetFilterText());
 
             ArrayList sim = simplifier.Execute(InputText);
 

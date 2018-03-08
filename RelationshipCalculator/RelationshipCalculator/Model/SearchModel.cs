@@ -23,7 +23,7 @@ namespace RelationshipCalculator.Model
         public SearchModel()
         {
             this.src = new DataSource();
-            this.obj = src.getJson();
+            this.obj = src.GetJson();
         }
 
         public void GetChain()
