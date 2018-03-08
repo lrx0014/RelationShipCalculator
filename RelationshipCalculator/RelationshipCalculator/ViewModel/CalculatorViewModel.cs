@@ -16,10 +16,11 @@ namespace RelationshipCalculator.ViewModel
         private CalculatorModel calculator;
 
         private string welcome = "欢迎使用亲戚关系计算器...";
-        private string error   = "发生错误，请重试！";
         private string inputText;
         private string resultText;
         private string display;
+        private bool isWifeBtnEnable;
+        private bool isHusbandBtnEnable;
        
 
         public CalculatorViewModel()
@@ -28,6 +29,8 @@ namespace RelationshipCalculator.ViewModel
             this.inputText = string.Empty;
             this.resultText = string.Empty;
             this.display = welcome;
+            this.isHusbandBtnEnable = true;
+            this.isWifeBtnEnable = true;
         }
 
         public string Display
@@ -65,6 +68,32 @@ namespace RelationshipCalculator.ViewModel
             {
                 calculator.Result = value;
                 RaisePropertyChanged("ResultText");
+            }
+        }
+
+        public bool IsWifeBtnEnable
+        {
+            get
+            {
+                return this.isWifeBtnEnable;
+            }
+            set
+            {
+                this.isWifeBtnEnable = value;
+                RaisePropertyChanged("IsWifeBtnEnable");
+            }
+        }
+
+        public bool IsHusbandBtnEnable
+        {
+            get
+            {
+                return this.isHusbandBtnEnable;
+            }
+            set
+            {
+                this.isHusbandBtnEnable = value;
+                RaisePropertyChanged("IsHusbandBtnEnable");
             }
         }
 
@@ -113,6 +142,8 @@ namespace RelationshipCalculator.ViewModel
                     Display    = welcome;
                     ResultText = string.Empty;
                     InputText  = string.Empty;
+                    IsWifeBtnEnable = true;
+                    IsHusbandBtnEnable = true;
                     break;
 
                 case "父":
@@ -125,6 +156,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的爸爸";
                     }
                     InputText += ",f";
+                    IsHusbandBtnEnable = false;
+                    IsWifeBtnEnable = true;
                     break;
 
                 case "母":
@@ -137,6 +170,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的妈妈";
                     }
                     InputText += ",m";
+                    IsWifeBtnEnable = false;
+                    IsHusbandBtnEnable = true;
                     break;
 
                 case "兄":
@@ -149,6 +184,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的哥哥";
                     }
                     InputText += ",ob";
+                    IsHusbandBtnEnable = false;
+                    IsWifeBtnEnable = true;
                     break;
 
                 case "弟":
@@ -161,6 +198,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的弟弟";
                     }
                     InputText += ",lb";
+                    IsWifeBtnEnable = true;
+                    IsHusbandBtnEnable = false;
                     break;
 
                 case "姐":
@@ -173,6 +212,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的姐姐";
                     }
                     InputText += ",os";
+                    IsHusbandBtnEnable = true;
+                    IsWifeBtnEnable = false;
                     break;
 
                 case "妹":
@@ -185,6 +226,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的妹妹";
                     }
                     InputText += ",ls";
+                    IsHusbandBtnEnable = true;
+                    IsWifeBtnEnable = false;
                     break;
 
                 case "夫":
@@ -197,6 +240,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的老公";
                     }
                     InputText += ",h";
+                    IsWifeBtnEnable = true;
+                    IsHusbandBtnEnable = false;
                     break;
 
                 case "妻":
@@ -209,6 +254,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的老婆";
                     }
                     InputText += ",w";
+                    IsHusbandBtnEnable = true;
+                    IsWifeBtnEnable = false;
                     break;
 
                 case "子":
@@ -221,6 +268,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的儿子";
                     }
                     InputText += ",s";
+                    IsWifeBtnEnable = true;
+                    IsHusbandBtnEnable = false;
                     break;
 
                 case "女":
@@ -233,6 +282,8 @@ namespace RelationshipCalculator.ViewModel
                         Display += "的女儿";
                     }
                     InputText += ",d";
+                    IsHusbandBtnEnable = true;
+                    IsWifeBtnEnable = false;
                     break;
             }
         }

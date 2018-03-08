@@ -41,7 +41,7 @@ namespace RelationshipCalculator.Model
             }
             if(found==false)
             {
-                Result = "尚未收录[" + temp + "] ...";
+                Result = "尚未收录[" + Keyword + "] ...";
             }
             
             return;
