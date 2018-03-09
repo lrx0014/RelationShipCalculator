@@ -2,16 +2,18 @@
 
 亲戚称谓数据来自开源项目 **(感谢mumuy:https://github.com/mumuy/relationship)**
 
-![](https://github.com/lrx0014/RelationShipCalculator/blob/master/Screenshots/logo_color.PNG)
+**LOGO:**
 
+![](https://github.com/lrx0014/RelationShipCalculator/blob/master/Screenshots/logo_color.png)
+
+**称谓计算**
 
 ![](https://github.com/lrx0014/RelationShipCalculator/blob/master/Screenshots/Desktop1.PNG)
 
+**关系查询**
 
 ![](https://github.com/lrx0014/RelationShipCalculator/blob/master/Screenshots/Desktop2.PNG)
 
-
-![](https://github.com/lrx0014/RelationShipCalculator/blob/master/Screenshots/Desktop3.PNG)
 
 The traditional Chinese kinship is complicated and difficult to remember. The project is a practical and interesting application. The corresponding relative call can be gained after inputting a relation chain in the calculator (e.g input: the son of dad’s elder brother’s wife; input: cousin); it is a Win10 UWP application; the data is from a open source project 
 
