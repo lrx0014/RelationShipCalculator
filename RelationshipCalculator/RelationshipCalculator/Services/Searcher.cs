@@ -24,6 +24,7 @@ namespace RelationshipCalculator.Services
             if(obj.ContainsKey(my))
             {
                 string one = obj[my].ToString().Split(',')[0];
+                one = Regex.Replace(one, "\\|", "");
                 ret = one;
             }
             else
@@ -34,6 +35,7 @@ namespace RelationshipCalculator.Services
                 if (obj.ContainsKey(my))
                 {
                     string one = obj[my].ToString().Split(',')[0];
+                    one = Regex.Replace(one, "\\|", "");
                     ret = one;
                 }
                 else

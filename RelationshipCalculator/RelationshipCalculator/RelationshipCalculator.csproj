@@ -17,8 +17,11 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>RelationshipCalculator_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>F80E94D136E8C2CA3E29B8FC8D9385132F42D846</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>RelationshipCalculator_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>B1C5B0A874D921DD49001ED0C0EB7DA129073D35</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -98,7 +101,6 @@
     </Compile>
     <Compile Include="Model\DataStore.cs" />
     <Compile Include="Model\SearchModel.cs" />
-    <Compile Include="Services\DataGetter.cs" />
     <Compile Include="ViewModel\NavMenuItem.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
     <Compile Include="View\AboutView.xaml.cs">
@@ -142,6 +144,7 @@
     <Content Include="Assets\Data\Data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="RelationshipCalculator_StoreKey.pfx" />
     <None Include="RelationshipCalculator_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +286,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

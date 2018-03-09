@@ -149,7 +149,7 @@ namespace RelationshipCalculator.ViewModel
                 case "父":
                     if(Display == string.Empty)
                     {
-                        Display += "爸爸";
+                        Display += "我的爸爸";
                     }
                     else
                     {
@@ -163,7 +163,7 @@ namespace RelationshipCalculator.ViewModel
                 case "母":
                     if (Display == string.Empty)
                     {
-                        Display += "妈妈";
+                        Display += "我的妈妈";
                     }
                     else
                     {
@@ -177,7 +177,7 @@ namespace RelationshipCalculator.ViewModel
                 case "兄":
                     if (Display == string.Empty)
                     {
-                        Display += "哥哥";
+                        Display += "我的哥哥";
                     }
                     else
                     {
@@ -191,7 +191,7 @@ namespace RelationshipCalculator.ViewModel
                 case "弟":
                     if (Display == string.Empty)
                     {
-                        Display += "弟弟";
+                        Display += "我的弟弟";
                     }
                     else
                     {
@@ -205,7 +205,7 @@ namespace RelationshipCalculator.ViewModel
                 case "姐":
                     if (Display == string.Empty)
                     {
-                        Display += "姐姐";
+                        Display += "我的姐姐";
                     }
                     else
                     {
@@ -219,7 +219,7 @@ namespace RelationshipCalculator.ViewModel
                 case "妹":
                     if (Display == string.Empty)
                     {
-                        Display += "妹妹";
+                        Display += "我的妹妹";
                     }
                     else
                     {
@@ -233,7 +233,7 @@ namespace RelationshipCalculator.ViewModel
                 case "夫":
                     if (Display == string.Empty)
                     {
-                        Display += "老公";
+                        Display += "我的老公";
                     }
                     else
                     {
@@ -247,7 +247,7 @@ namespace RelationshipCalculator.ViewModel
                 case "妻":
                     if (Display == string.Empty)
                     {
-                        Display += "老婆";
+                        Display += "我的老婆";
                     }
                     else
                     {
@@ -261,7 +261,7 @@ namespace RelationshipCalculator.ViewModel
                 case "子":
                     if (Display == string.Empty)
                     {
-                        Display += "儿子";
+                        Display += "我的儿子";
                     }
                     else
                     {
@@ -275,7 +275,7 @@ namespace RelationshipCalculator.ViewModel
                 case "女":
                     if (Display == string.Empty)
                     {
-                        Display += "女儿";
+                        Display += "我的女儿";
                     }
                     else
                     {

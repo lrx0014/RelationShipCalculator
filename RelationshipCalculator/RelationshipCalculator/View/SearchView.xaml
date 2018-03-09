@@ -26,7 +26,7 @@
         <TextBox Grid.Row="1" 
                  HorizontalAlignment="Center"
                  FontSize="40"
-                 PlaceholderText="示例: 姑姥姥"
+                 PlaceholderText="示例: 七舅姥爷"
                  Text="{Binding Path=Keyword,Mode=TwoWay}"
                  Width="auto"/>
 

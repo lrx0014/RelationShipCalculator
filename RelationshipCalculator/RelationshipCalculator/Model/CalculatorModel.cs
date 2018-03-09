@@ -28,7 +28,7 @@ namespace RelationshipCalculator.Model
                 this.src = new DataSource();
             }catch(Exception e)
             {
-                Console.Write(e.Message);
+                Console.Write("ERROR: " + e.Message + "\n");
             }
             
         }

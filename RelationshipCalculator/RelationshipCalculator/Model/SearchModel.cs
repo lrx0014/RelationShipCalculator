@@ -23,16 +23,27 @@ namespace RelationshipCalculator.Model
         public SearchModel()
         {
             this.src = new DataSource();
-            this.obj = src.GetJson();
+            try
+            {
+                this.obj = src.GetJson();
+            }catch(Exception e)
+            {
+                Console.Write("ERROR: " + e.Message + "\n");
+            }
+            
         }
 
         public void GetChain()
         {
             bool found = false;
             string temp = Regex.Replace(Keyword, "^[一|二|三|四|五|六|七|八|九|十]+","x");
+            string k1 = "|" + temp + ",";
+            string k2 = "," + temp + ",";
+            string k3 = "," + temp + "|";
+            string k4 = "|" + temp + "|";
             foreach(var i in obj)
             {
-                if(i.Value.ToString().Contains(temp))
+                if(i.Value.ToString().Contains(k1) || i.Value.ToString().Contains(k2) || i.Value.ToString().Contains(k3) || i.Value.ToString().Contains(k4))
                 {
                     Result = Transfer(i.Key);
                     found = true;
