@@ -1,5 +1,9 @@
 # RelationShipCalculator 中国亲戚称谓计算器(UWP版)
 
+**本应用已在微软应用商店上架，欢迎Win10用户体验！！^v^**
+
+**[应用商店链接](https://www.microsoft.com/store/productId/9PLTPDW7L0XJ)**
+
 亲戚称谓数据来自开源项目 **(感谢mumuy:https://github.com/mumuy/relationship)**
 
 **LOGO:**
