@@ -23,7 +23,18 @@
             VerticalAlignment="Bottom"
             Margin="0,0,0,10">
             <Run Foreground="ForestGreen"
-                 Text="UWP亲戚关系计算器 &#13;version 1.0" />
+                 Text="UWP亲戚关系计算器 &#13;" />
+        </TextBlock>
+
+        <TextBlock Grid.Row="0"
+            FontSize="22px" 
+            FontWeight="Bold"
+            TextWrapping="Wrap"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Margin="0,0,0,10">
+            <Run Foreground="ForestGreen"
+                 Text="{Binding Path=VersionNumber,Mode=TwoWay}" />
         </TextBlock>
 
         <TextBlock Grid.Row="1"

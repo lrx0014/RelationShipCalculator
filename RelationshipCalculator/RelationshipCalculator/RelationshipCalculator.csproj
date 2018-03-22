@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Model\DataStore.cs" />
     <Compile Include="Model\SearchModel.cs" />
+    <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\NavMenuItem.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
     <Compile Include="View\AboutView.xaml.cs">
