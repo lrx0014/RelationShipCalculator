@@ -17,7 +17,7 @@ namespace RelationshipCalculator.ViewModel
         public AboutViewModel()
         {
             this.versionNumber = string.Empty;
-            getVersion();
+            GetVersion();
             this.versionNumber = VersionNumber;
         }
 
@@ -34,7 +34,7 @@ namespace RelationshipCalculator.ViewModel
             }
         }
 
-        private void getVersion()
+        private void GetVersion()
         {
             try
             {
@@ -54,7 +54,7 @@ namespace RelationshipCalculator.ViewModel
         {
             get
             {
-                return new RelayCommand(getVersion);
+                return new RelayCommand(GetVersion);
             }
         }
     }

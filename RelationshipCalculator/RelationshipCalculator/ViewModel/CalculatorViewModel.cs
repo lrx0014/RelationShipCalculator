@@ -97,7 +97,7 @@ namespace RelationshipCalculator.ViewModel
             }
         }
 
-        private void setBtnState()
+        private void SetBtnState()
         {
             if (InputText == string.Empty)
             {
@@ -131,21 +131,21 @@ namespace RelationshipCalculator.ViewModel
             }
         }
 
-        private void clear()
+        private void Clear()
         {
             Display = welcome;
             ResultText = string.Empty;
             InputText = string.Empty;
-            setBtnState();
+            SetBtnState();
         }
 
-        private void backDelete()
+        private void BackDelete()
         {
             // 我的爸爸[的爸爸] ,f[,f] || ,[,ob]
             int lastComma = InputText.LastIndexOf(',');
             if(lastComma < 1)
             {
-                clear();
+                Clear();
                 return;
             }
             InputText = InputText.Substring(0, lastComma);
@@ -153,7 +153,7 @@ namespace RelationshipCalculator.ViewModel
             return;
         }
 
-        private void cal()
+        private void Cal()
         {
             try
             {
@@ -182,11 +182,11 @@ namespace RelationshipCalculator.ViewModel
         {
             get
             {
-                return new RelayCommand(cal);
+                return new RelayCommand(Cal);
             }
         }
 
-        private void general(string button)
+        private void General(string button)
         {
             if (Display == welcome || Display.Split(',')[0]=="发生错误")
             {
@@ -205,18 +205,18 @@ namespace RelationshipCalculator.ViewModel
                     }
                     else
                     {
-                        backDelete();
-                        setBtnState();
+                        BackDelete();
+                        SetBtnState();
                         if(InputText != string.Empty)
                         {
-                            cal();
+                            Cal();
                         }
                         
                     }
                     break;
 
                 case "清空":
-                    clear();
+                    Clear();
                     break;
 
                 case "父":
@@ -231,7 +231,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",f";
                     //IsHusbandBtnEnable = false;
                     //IsWifeBtnEnable = true;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "母":
@@ -246,7 +246,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",m";
                     //IsWifeBtnEnable = false;
                     //IsHusbandBtnEnable = true;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "兄":
@@ -261,7 +261,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",ob";
                     //IsHusbandBtnEnable = false;
                     //IsWifeBtnEnable = true;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "弟":
@@ -276,7 +276,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",lb";
                     //IsWifeBtnEnable = true;
                     //IsHusbandBtnEnable = false;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "姐":
@@ -291,7 +291,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",os";
                     //IsHusbandBtnEnable = true;
                     //IsWifeBtnEnable = false;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "妹":
@@ -306,7 +306,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",ls";
                     //IsHusbandBtnEnable = true;
                     //IsWifeBtnEnable = false;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "夫":
@@ -321,7 +321,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",h";
                     //IsWifeBtnEnable = true;
                     //IsHusbandBtnEnable = false;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "妻":
@@ -336,7 +336,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",w";
                     //IsHusbandBtnEnable = true;
                     //IsWifeBtnEnable = false;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "子":
@@ -351,7 +351,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",s";
                     //IsWifeBtnEnable = true;
                     //IsHusbandBtnEnable = false;
-                    setBtnState();
+                    SetBtnState();
                     break;
 
                 case "女":
@@ -366,7 +366,7 @@ namespace RelationshipCalculator.ViewModel
                     InputText += ",d";
                     //IsHusbandBtnEnable = true;
                     //IsWifeBtnEnable = false;
-                    setBtnState();
+                    SetBtnState();
                     break;
             }
         }
@@ -375,7 +375,7 @@ namespace RelationshipCalculator.ViewModel
         {
             get
             {
-                return new RelayCommand<string>(general);
+                return new RelayCommand<string>(General);
             }
         }
 
