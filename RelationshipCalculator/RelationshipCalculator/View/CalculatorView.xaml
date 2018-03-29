@@ -150,13 +150,20 @@
                 <Button Command="{Binding GeneralCommand}" CommandParameter="父" Grid.Row="0" Grid.Column="0" Content="父" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="母" Grid.Row="0" Grid.Column="1" Content="母" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="姐" Grid.Row="0" Grid.Column="2" Content="姐" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
-                <Button Command="{Binding GeneralCommand}" CommandParameter="清空" Grid.Row="2" Grid.Column="2" Content="清空" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#FF4B968C"/>
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button Command="{Binding GeneralCommand}" CommandParameter="退格" Grid.Row="0" Grid.Column="2" Content="退格" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#FF393745"/>
+                    <Button Command="{Binding GeneralCommand}" CommandParameter="清空" Grid.Row="1" Content="清空" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#FFBD2727"/>
+                </Grid>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="兄" Grid.Row="1" Grid.Column="0" Content="兄"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="弟" Grid.Row="1" Grid.Column="1" Content="弟"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="妹" Grid.Row="1" Grid.Column="2" Content="妹"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="子" Grid.Row="2" Grid.Column="0" Content="子"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="女" Grid.Row="2" Grid.Column="1" Content="女"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
-                <Button Command="{Binding CalculateCommand}" Grid.Row="2" Grid.Column="3" Content="计算" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#FFEF0129"/>
+                <Button Command="{Binding CalculateCommand}" Grid.Row="2" Grid.Column="3" Content="计算" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" Background="#FFFFB836"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="夫" IsEnabled="{Binding Path=IsHusbandBtnEnable,Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Content="夫"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
                 <Button Command="{Binding GeneralCommand}" CommandParameter="妻" IsEnabled="{Binding Path=IsWifeBtnEnable,Mode=TwoWay}" Grid.Row="1" Grid.Column="3" Content="妻"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24"/>
             </Grid>
