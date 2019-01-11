@@ -1,5 +1,9 @@
 # RelationShipCalculator 中国亲戚称谓计算器(UWP版)
 
+### Automatically builds
+
+[![Build status](https://build.appcenter.ms/v0.1/apps/c07733a8-fd70-441d-a705-be028c2f40c2/branches/master/badge)](https://appcenter.ms)
+
 **本应用已在微软应用商店上架，欢迎Win10用户体验！！^v^**
 
 **[应用商店链接](https://www.microsoft.com/store/productId/9PLTPDW7L0XJ)**
